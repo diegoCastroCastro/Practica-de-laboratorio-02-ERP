@@ -5,9 +5,10 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Bodega implements Serializable{
+public class Categoria implements Serializable{
 	
 	/**
 	 * 
@@ -17,13 +18,14 @@ public class Bodega implements Serializable{
 	@Id
 	private int id;
 	private String nombre;
-	private List<Producto> listaProductos;
+	@OneToMany(mappedBy = "categoria")
+	private List<Producto>listaProductos;
 	
-	public Bodega() {
+	public Categoria() {
 		super();
 	}
 
-	public Bodega(int id, String nombre, List<Producto> listaProductos) {
+	public Categoria(int id, String nombre, List<Producto> listaProductos) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -72,7 +74,7 @@ public class Bodega implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Bodega other = (Bodega) obj;
+		Categoria other = (Categoria) obj;
 		if (id != other.id)
 			return false;
 		if (listaProductos == null) {
@@ -90,7 +92,7 @@ public class Bodega implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Bodega [id=" + id + ", nombre=" + nombre + ", listaProductos=" + listaProductos + "]";
+		return "Categoria [id=" + id + ", nombre=" + nombre + ", listaProductos=" + listaProductos + "]";
 	}
 	
 	
