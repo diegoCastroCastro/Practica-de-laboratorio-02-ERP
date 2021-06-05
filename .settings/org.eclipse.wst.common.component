@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Practica de laboratorio 02 ERP">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="Practica_de_laboratorio_02_ERP"/>
+        <property name="java-output-path" value="/Practica de laboratorio 02 ERP/bluid/classes"/>
+    </wb-module>
+</project-modules>
