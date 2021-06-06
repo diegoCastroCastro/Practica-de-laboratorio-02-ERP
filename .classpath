@@ -11,5 +11,8 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/UPS/10/Aplicaciones Distribuidas 2/Librerias/JPA/eclipselink-2.0.2.jar"/>
+	<classpathentry kind="lib" path="D:/UPS/10/Aplicaciones Distribuidas 2/Librerias/JPA/jakarta.persistence-api-3.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/UPS/10/Aplicaciones Distribuidas 2/Librerias/JPA/mysql-connector-java-8.0.24.jar"/>
 	<classpathentry kind="output" path="bluid/classes"/>
 </classpath>
