@@ -4,21 +4,21 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import ec.edu.ups.entidad.Cliente;
+import ec.edu.ups.entidad.Factura;
 
 @Stateless
-public class ClienteFacade extends AbstractFacade<Cliente>{
-
-	@PersistenceContext(unitName = "Practica de laboratorio 02 ERP")
+public class FacturaFacade extends AbstractFacade<Factura>{
+	
+	@PersistenceContext(unitName = "Practica-de-laboratorio-02-ERP-master")
 	private EntityManager em;
 	
-	public ClienteFacade() {
-		super(Cliente.class);
+	public FacturaFacade() {
+		super(Factura.class);
 	}
-
+	
 	@Override
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-	
+
 }

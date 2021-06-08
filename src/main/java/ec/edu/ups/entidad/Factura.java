@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
+import javax.faces.annotation.FacesConfig;
+import javax.inject.Named;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 

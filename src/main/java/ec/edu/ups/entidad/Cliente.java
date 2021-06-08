@@ -2,9 +2,11 @@ package ec.edu.ups.entidad;
 
 import java.io.Serializable;
 
+import javax.enterprise.context.RequestScoped;
+import javax.faces.annotation.FacesConfig;
+import javax.inject.Named;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 @Entity
 public class Cliente implements Serializable{
 	

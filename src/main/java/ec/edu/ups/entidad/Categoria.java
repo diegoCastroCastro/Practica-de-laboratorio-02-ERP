@@ -3,11 +3,18 @@ package ec.edu.ups.entidad;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
+import javax.faces.annotation.FacesConfig;
+import javax.inject.Named;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @Entity
-public class Bodega implements Serializable{
+public class Categoria implements Serializable{
 	
 	/**
 	 * 
@@ -15,20 +22,22 @@ public class Bodega implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String nombre;
-	private List<Producto> listaProductos;
+	@OneToMany(mappedBy = "categoria")
+	private List<Producto>listaProductos;
+	@Transient
+	private boolean editable;
 	
-	public Bodega() {
-		super();
+	public Categoria() {
 	}
 
-	public Bodega(int id, String nombre, List<Producto> listaProductos) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.listaProductos = listaProductos;
+	public Categoria( String nombre) {
+		this.nombre = nombre; 
 	}
+	
 
 	public int getId() {
 		return id;
@@ -53,6 +62,15 @@ public class Bodega implements Serializable{
 	public void setListaProductos(List<Producto> listaProductos) {
 		this.listaProductos = listaProductos;
 	}
+	
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
 
 	@Override
 	public int hashCode() {
@@ -72,7 +90,7 @@ public class Bodega implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Bodega other = (Bodega) obj;
+		Categoria other = (Categoria) obj;
 		if (id != other.id)
 			return false;
 		if (listaProductos == null) {
@@ -90,7 +108,7 @@ public class Bodega implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Bodega [id=" + id + ", nombre=" + nombre + ", listaProductos=" + listaProductos + "]";
+		return "Categoria [id=" + id + ", nombre=" + nombre + ", listaProductos=" + listaProductos + "]";
 	}
 	
 	

@@ -2,30 +2,24 @@ package ec.edu.ups.entidad;
 
 import java.io.Serializable;
 import java.util.List;
-
+ 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
-public class Categoria implements Serializable{
-	
-	/**
-	 * 
-	 */
+public class Bodega implements Serializable{
+	 
 	private static final long serialVersionUID = 1L;
-	
 	@Id
 	private int id;
 	private String nombre;
-	@OneToMany(mappedBy = "categoria")
-	private List<Producto>listaProductos;
+	private List<Producto> listaProductos;
 	
-	public Categoria() {
+	public Bodega() {
 		super();
 	}
 
-	public Categoria(int id, String nombre, List<Producto> listaProductos) {
+	public Bodega(int id, String nombre, List<Producto> listaProductos) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -74,7 +68,7 @@ public class Categoria implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Categoria other = (Categoria) obj;
+		Bodega other = (Bodega) obj;
 		if (id != other.id)
 			return false;
 		if (listaProductos == null) {
@@ -92,7 +86,7 @@ public class Categoria implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Categoria [id=" + id + ", nombre=" + nombre + ", listaProductos=" + listaProductos + "]";
+		return "Bodega [id=" + id + ", nombre=" + nombre + ", listaProductos=" + listaProductos + "]";
 	}
 	
 	
